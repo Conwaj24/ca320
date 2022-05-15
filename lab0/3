@@ -1,0 +1,9 @@
+#!/bin/env ghci
+
+b2i :: Bool -> Int
+b2i True = 1
+b2i False = 0
+
+numSorted :: Ord a => a -> [a] -> Int
+numSorted _ [] = 0
+numSorted e a = (b2i ((head a) == e)) + (numSorted (tail a))
